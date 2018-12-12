@@ -26,7 +26,7 @@
 
 &lt;p&gt;A Steiner Tree is an optimization algorithm for finding a subtree spanning so called terminal vertices.
 Terminal vertices are the nodes in a network which must spanned by the MST.
-This problems arise in telecommunication networks, VSLI chip design.&lt;/p&gt;
+This problems arise in telecommunication networks and VSLI chip design.&lt;/p&gt;
 
 &lt;p&gt;This article describes an 2-approximation algorithm for the Metric Steiner Tree Problem.&lt;/p&gt;
 
@@ -95,8 +95,7 @@ $$&lt;/p&gt;
 
 &lt;h2 id=&#34;an-approximation-algorithm&#34;&gt;An approximation algorithm&lt;/h2&gt;
 
-&lt;p&gt;We analyse the worst-case behaviour on the complete graph $G’$.
-Consider a Steiner Tree with optimal cost $OPT$ for $G’$.&lt;/p&gt;
+&lt;p&gt;Consider a Steiner Tree with optimal cost $OPT$ for $G’$.&lt;/p&gt;
 
 &lt;p&gt;Find a MST on the termial vertices.&lt;/p&gt;
 
@@ -108,15 +107,17 @@ The cost of an eulerian cycle equals $2 \cdot OPT$ by edge double.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;img/double-the-edges.pdf&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Construct a hamiltonian cycle by short cutting steiner vertices previously visited.
-To get a hamiltonian path remove one edge of the cycle.&lt;/p&gt;
+&lt;p&gt;Construct a hamiltonian cycle by short cutting steiner vertices previously visited.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;img/mst-st.pdf&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;We have found an MST on the terminal vertices.&lt;/p&gt;
+&lt;p&gt;To get a hamiltonian path remove one edge of the cycle.
+We have found an MST on the terminal vertices.&lt;/p&gt;
 
 &lt;p&gt;A hamiltonian path does not increase the cost, because of the triangle inequality and removing edges.
 The resulting MST on the terminal vertices cost $\leq 2 \cdot OPT$ and the bound is tight.&lt;/p&gt;
+
+&lt;p&gt;Special thanks to Hans Kellerer (University of Graz) for teaching.&lt;/p&gt;
 </description>
       
     </item>
