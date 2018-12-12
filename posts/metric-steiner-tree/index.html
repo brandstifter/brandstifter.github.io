@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta name="generator" content="Hugo 0.52" />
+  <meta charset="utf-8">
+  <title>Metric Steiner Tree · </title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="The Metric Steiner Tree Motivation A Steiner Tree is an optimization algorithm for finding asubtree spanning so called terminal vertices. Terminal vertices are the nodes in a network which must spanned by the MST. This problems arise in telecommunication networks, VSLI chip design.
+This article describes an approximation algorithm for the Metric Steiner Tree Problem
+Introduction The Steiner Tree Problem (STP) is a graph $G = (V, E)$ along with terminals $R \subset V$." />
+
+  <meta name="keywords" content="Thomas Brandstätter, Computer Science, Mathematics, Graph theory, Operations Research, Algorithms, Software Engineering" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<link rel="stylesheet" href="http://brandstifter.io/css/brandstifter.css">
+
+
+
+
+<meta property="og:title" content="Metric Steiner Tree" />
+<meta property="og:description" content="The Metric Steiner Tree Motivation A Steiner Tree is an optimization algorithm for finding asubtree spanning so called terminal vertices. Terminal vertices are the nodes in a network which must spanned by the MST. This problems arise in telecommunication networks, VSLI chip design.
+This article describes an approximation algorithm for the Metric Steiner Tree Problem
+Introduction The Steiner Tree Problem (STP) is a graph $G = (V, E)$ along with terminals $R \subset V$." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://brandstifter.io/posts/metric-steiner-tree/" /><meta property="article:published_time" content="2018-12-08T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-12-08T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Metric Steiner Tree">
+<meta itemprop="description" content="The Metric Steiner Tree Motivation A Steiner Tree is an optimization algorithm for finding asubtree spanning so called terminal vertices. Terminal vertices are the nodes in a network which must spanned by the MST. This problems arise in telecommunication networks, VSLI chip design.
+This article describes an approximation algorithm for the Metric Steiner Tree Problem
+Introduction The Steiner Tree Problem (STP) is a graph $G = (V, E)$ along with terminals $R \subset V$.">
+
+
+<meta itemprop="datePublished" content="2018-12-08T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-12-08T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="524">
+
+
+
+<meta itemprop="keywords" content="graph theory,steiner tree,2-approximation," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Metric Steiner Tree"/>
+<meta name="twitter:description" content="The Metric Steiner Tree Motivation A Steiner Tree is an optimization algorithm for finding asubtree spanning so called terminal vertices. Terminal vertices are the nodes in a network which must spanned by the MST. This problems arise in telecommunication networks, VSLI chip design.
+This article describes an approximation algorithm for the Metric Steiner Tree Problem
+Introduction The Steiner Tree Problem (STP) is a graph $G = (V, E)$ along with terminals $R \subset V$."/>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+<body>
+  
+  <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('http://brandstifter.io/posts/metric-steiner-tree/img/constellation.png'); background-position: center; /*background-size: cover;*/ background-position: calc(50% - 27px) calc(50% - 70px);">
+  <div class="container">
+  <nav class="header-nav navbar navbar-expand-md navbar-dark light-dark">
+    <div class="header-logo navbar-brand">
+      
+        <a class="float-left" href="http://brandstifter.io/">
+      
+        
+        <img class="mr20 header-logo-image" src="http://brandstifter.io/images/phi.png" alt="logo">
+        
+        
+          Searching the truth
+         
+      </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="nav-menu collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        
+        
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="container header-wrapper">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="header-content">
+        <h1 class="header-title">Metric Steiner Tree</h1>
+        <p class="header-date">
+        Sat 08 December 2018
+          / In categories
+          <a href="http://brandstifter.io/category/approximation/">approximation</a>
+        </p>
+        
+        <div class=""></div>
+        
+          <div class="clearfix"></div>
+          <p class="float-right header-tags">
+              <i class="fas fa-tags" aria-hidden="true"></i>
+              <a href="http://brandstifter.io/tag/2-approximation/">2-approximation</a>, 
+                <a href="http://brandstifter.io/tag/graph-theory/">graph theory</a>, 
+                <a href="http://brandstifter.io/tag/steiner-tree/">steiner tree</a>
+          </p>
+        
+        
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+<div class="container content">
+  
+
+<h1 id="the-metric-steiner-tree">The Metric Steiner Tree</h1>
+
+<h2 id="motivation">Motivation</h2>
+
+<p>A Steiner Tree is an optimization algorithm for finding asubtree spanning so called terminal vertices.
+Terminal vertices are the nodes in a network which must spanned by the MST.
+This problems arise in telecommunication networks, VSLI chip design.</p>
+
+<p>This article describes an approximation algorithm for the Metric Steiner Tree Problem</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The Steiner Tree Problem (STP) is a graph $G = (V, E)$ along with terminals $R \subset V$.
+$V$ is splitted into two sets $R$ required terminal vertices and $S$ optional Steiner vertices.
+A subgraph of $G$ is a feasible solution if it spans all vertices of $T$.
+The objective is to minimize the cost.</p>
+
+<p>The Metric Steiner Tree Problem (MSTP) is a specialization of the vanilla Steiner Tree $X = R \cup S$ along with a non-negative distance function $d : X \times X \mapsto \mathbb{R}_{\geq 0}$ for edges.
+A metric have two properties:
+$$
+\begin{align}
+    \forall x, y \in X &amp;: d(x, y) = d(y, x) \nonumber \newline
+    \forall x, y, z \in X &amp;: d(x, y) \leq d(x, z) + d(z, y)  \nonumber
+\end{align}
+$$</p>
+
+<p>This gives an undirected graph $G = (V, E)$ with non-negative edge costs.</p>
+
+<p>Problem: Find a minimal cost tree $T$, which contains all terminal vertives, and possibly some of the optional points, such that the cost
+$$
+\begin{align}
+    C_d (T) := \sum_{(u,v) \in E} d(u, v) \nonumber
+\end{align}
+$$
+of the tree is minimized.</p>
+
+<h3 id="non-optimal-spanning-trees">Non-optimal spanning trees</h3>
+
+<p>Possibility: Find a Minimal Spanning Tree (MST) on the terminal vertices,</p>
+
+<p><img src="img/k4-mst.pdf" alt="" /></p>
+
+<p>but this is not optimal!</p>
+
+<h2 id="towards-an-approximation">Towards an approximation</h2>
+
+<p>In this section we show that the approximation bound for MSTP is not greater than for STP.</p>
+
+<p>Define $G’ = (V, E’$) from $G$ as follows: $G’$ is a complete graph and $e’_{ij}$ is the length of the shortets path in G for vertices $i$ to $j$.</p>
+
+<p>$$
+\begin{align}
+    OPT(G’) \leq OPT(G)
+\end{align}
+$$</p>
+
+<p>Assume we have a heuristic $H$ for $G’$.
+We get a solution for $G$ by replacing each edge of the MST in $G$ with its corresponding shortest path in $G$. Resolve cycles by removing appropriate edges. Hence
+$$
+\begin{align}
+    C^H(G) \leq C^H(G’)
+\end{align}
+$$
+and therefore by (1) and (2)
+$$
+\begin{align}
+    \frac{C^H(G’)}{OPT(G’)} \leq \alpha  \implies  \frac{C^H(G)}{OPT(G)} \leq \alpha
+\end{align}
+$$</p>
+
+<p>Thus, each approximation algorithm for the MSTP with bound $\alpha$ gives an algorithm with bound α for the General Steiner Tree.</p>
+
+<h2 id="an-approximation-algorithm">An approximation algorithm</h2>
+
+<p>We analyse the worst-case behaviour on the complete graph $G’$.
+Consider a Steiner Tree with optimal cost $OPT$ for $G’$.</p>
+
+<p>Find a MST on the termial vertices.</p>
+
+<p><img src="img/mst.pdf" alt="" /></p>
+
+<p>Double each edge</p>
+
+<p><img src="imng/double-the-edges.pdf" alt="" /></p>
+
+<p>Construct a hamiltonian cycle by short cutting steiner vertices previously visited.
+Get an hamiltonian path by removing one ??? the edges.</p>
+
+<p><img src="img/mst-st.pdf" alt="" /></p>
+
+<p>We have fo:weund an MST on the terminal vertices.</p>
+
+<p>Each vertex has even degree.
+In general eulerian cycles exists $\Longleftrightarrow$ each vertex has even degree.
+Therefore an eulearian cycle exists.</p>
+
+<p>Eulerian cycle: Total cost equals $2 \cdot OPT$ by edge double.
+A hamiltonian path does not increase the cost, because of the triangle inequality and removing edges.
+The resulting MST on the terminal vertices cost $\leq 2 \cdot OPT$ and the bound is tight.</p>
+
+
+  
+  
+    
+  
+  
+
+
+</div>
+<div class="footer gradient-2">
+  <div class="container footer-container ">
+    <div class="row">
+      <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+        <div class="footer-title">Sitemap</div>
+        <ul class="list-unstyled">
+            
+              
+                <li><a href="http://brandstifter.io/tags/">Tags</a></li>
+              
+              
+                <li><a href="http://brandstifter.io/categories/">Categories</a></li>
+              
+            
+            
+            
+            <li><a rel="alternate" type="application/rss&#43;xml" href="http://brandstifter.io/index.xml"><i class="fas fa-rss-square"></i> RSS Feed</a></li>
+            
+            
+        </ul>
+      </div>
+      <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+        
+        <div class="footer-title">Social</div>
+        <ul class="list-unstyled">
+          
+          <li><a href="https://github.com/brandstifter" rel="noopener" target="_blank">GitHub</a></li>
+          
+        </ul>
+        
+      </div>
+      <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+        
+        <div class="footer-title">Links</div>
+        <ul class="list-unstyled">
+          
+          <li><a href="http://quintessenz.at" rel="noopener" target="_blank">quintessenz.at</a></li>
+          
+        </ul>
+        
+      </div> 
+      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        <p class="pull-right text-right">
+          <small><em>Proudly powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo</a></em></small><br/>
+          <small><em>Theme - <a href="https://github.com/shaform/hugo-theme-den" rel="noopener" target="_blank">brandstifter</a></em></small><br/>
+          <small>
+            &copy; 
+            Thomas Brandstätter
+            2018
+          </small>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+</html>
