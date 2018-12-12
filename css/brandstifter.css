@@ -599,7 +599,5 @@ blockquote{
 
 /*   ********************   */
 
-img[src$='K4-MST' {
-    width: 30%;
-    height: auto;
+img[src$="#pic-float"] {
 }

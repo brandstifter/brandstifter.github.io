@@ -28,7 +28,7 @@
 Terminal vertices are the nodes in a network which must spanned by the MST.
 This problems arise in telecommunication networks, VSLI chip design.&lt;/p&gt;
 
-&lt;p&gt;This article describes an 2-approximation algorithm for the Metric Steiner Tree Problem&lt;/p&gt;
+&lt;p&gt;This article describes an 2-approximation algorithm for the Metric Steiner Tree Problem.&lt;/p&gt;
 
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 
@@ -37,7 +37,7 @@ $V$ is splitted into two sets $R$ required terminal vertices and $S$ optional St
 A subgraph of $G$ is a feasible solution if it spans all vertices of $T$.
 The objective is to minimize the cost.&lt;/p&gt;
 
-&lt;p&gt;The Metric Steiner Tree Problem (MSTP) is a specialization of the vanilla Steiner Tree $X = R \cup S$ along with a non-negative distance function $d : X \times X \mapsto \mathbb{R}_{\geq 0}$ for edges.
+&lt;p&gt;The Metric Steiner Tree Problem (MSTP) is a specialization of the vanilla Steiner Tree $X = T \cup S$ along with a non-negative distance function $d : X \times X \mapsto \mathbb{R}_{\geq 0}$ for edges.
 A metric have two properties:
 $$
 \begin{align}
@@ -48,10 +48,10 @@ $$&lt;/p&gt;
 
 &lt;p&gt;This gives an undirected graph $G = (V, E)$ with non-negative edge costs.&lt;/p&gt;
 
-&lt;p&gt;Problem: Find a minimal cost tree $T$, which contains all terminal vertives, and possibly some of the optional points, such that the cost
+&lt;p&gt;Problem: Find a minimal cost tree $T_m$, which contains all terminal vertives, and possibly some of the optional points, such that the cost
 $$
 \begin{align}
-    C_d (T) := \sum_{(u,v) \in E} d(u, v) \nonumber
+    C_d (T_m) := \sum_{(u,v) \in E} d(u, v) \nonumber
 \end{align}
 $$
 of the tree is minimized.&lt;/p&gt;
@@ -62,7 +62,8 @@ of the tree is minimized.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;img/k4-mst.pdf&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;but this is not optimal!&lt;/p&gt;
+&lt;p&gt;but this is not optimal!
+Next we look for an approximation for the MSTP.&lt;/p&gt;
 
 &lt;h2 id=&#34;towards-an-approximation&#34;&gt;Towards an approximation&lt;/h2&gt;
 
@@ -107,7 +108,8 @@ The cost of an eulerian cycle equals $2 \cdot OPT$ by edge double.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;img/double-the-edges.pdf&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Construct a hamiltonian cycle by short cutting steiner vertices previously visited.&lt;/p&gt;
+&lt;p&gt;Construct a hamiltonian cycle by short cutting steiner vertices previously visited.
+To get a hamiltonian path remove one edge of the cycle.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;img/mst-st.pdf&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
