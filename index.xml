@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://brandstifter.github.io/</link>
+    <link>https://brandstifter.github.io/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 08 Dec 2018 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="http://brandstifter.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://brandstifter.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Metric Steiner Tree</title>
-      <link>http://brandstifter.github.io/posts/metric-steiner-tree/</link>
+      <link>https://brandstifter.github.io/posts/metric-steiner-tree/</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://brandstifter.github.io/posts/metric-steiner-tree/</guid>
+      <guid>https://brandstifter.github.io/posts/metric-steiner-tree/</guid>
       
         <description>
 
