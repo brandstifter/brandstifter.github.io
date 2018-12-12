@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Graph Theory on </title>
-    <link>http://brandstifter.io/tag/graph-theory/</link>
+    <link>http://brandstifter.github.io/tag/graph-theory/</link>
     <description>Recent content in Graph Theory on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 08 Dec 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://brandstifter.io/tag/graph-theory/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://brandstifter.github.io/tag/graph-theory/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Metric Steiner Tree</title>
-      <link>http://brandstifter.io/posts/metric-steiner-tree/</link>
+      <link>http://brandstifter.github.io/posts/metric-steiner-tree/</link>
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://brandstifter.io/posts/metric-steiner-tree/</guid>
+      <guid>http://brandstifter.github.io/posts/metric-steiner-tree/</guid>
       <description>The Metric Steiner Tree Motivation A Steiner Tree is an optimization algorithm for finding asubtree spanning so called terminal vertices. Terminal vertices are the nodes in a network which must spanned by the MST. This problems arise in telecommunication networks, VSLI chip design.
 This article describes an approximation algorithm for the Metric Steiner Tree Problem
 Introduction The Steiner Tree Problem (STP) is a graph $G = (V, E)$ along with terminals $R \subset V$.</description>
