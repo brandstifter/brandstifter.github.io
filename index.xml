@@ -24,15 +24,15 @@
 
 &lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
 
-&lt;p&gt;A Steiner Tree is an optimization algorithm for finding asubtree spanning so called terminal vertices.
+&lt;p&gt;A Steiner Tree is an optimization algorithm for finding a subtree spanning so called terminal vertices.
 Terminal vertices are the nodes in a network which must spanned by the MST.
 This problems arise in telecommunication networks, VSLI chip design.&lt;/p&gt;
 
-&lt;p&gt;This article describes an approximation algorithm for the Metric Steiner Tree Problem&lt;/p&gt;
+&lt;p&gt;This article describes an 2-approximation algorithm for the Metric Steiner Tree Problem&lt;/p&gt;
 
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;The Steiner Tree Problem (STP) is a graph $G = (V, E)$ along with terminals $R \subset V$.
+&lt;p&gt;The Steiner Tree Problem (STP) is a graph $G = (V, E)$.
 $V$ is splitted into two sets $R$ required terminal vertices and $S$ optional Steiner vertices.
 A subgraph of $G$ is a feasible solution if it spans all vertices of $T$.
 The objective is to minimize the cost.&lt;/p&gt;

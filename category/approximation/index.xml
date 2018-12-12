@@ -17,9 +17,9 @@
       <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://brandstifter.github.io/posts/metric-steiner-tree/</guid>
-      <description>The Metric Steiner Tree Motivation A Steiner Tree is an optimization algorithm for finding asubtree spanning so called terminal vertices. Terminal vertices are the nodes in a network which must spanned by the MST. This problems arise in telecommunication networks, VSLI chip design.
-This article describes an approximation algorithm for the Metric Steiner Tree Problem
-Introduction The Steiner Tree Problem (STP) is a graph $G = (V, E)$ along with terminals $R \subset V$.</description>
+      <description>The Metric Steiner Tree Motivation A Steiner Tree is an optimization algorithm for finding a subtree spanning so called terminal vertices. Terminal vertices are the nodes in a network which must spanned by the MST. This problems arise in telecommunication networks, VSLI chip design.
+This article describes an 2-approximation algorithm for the Metric Steiner Tree Problem
+Introduction The Steiner Tree Problem (STP) is a graph $G = (V, E)$. $V$ is splitted into two sets $R$ required terminal vertices and $S$ optional Steiner vertices.</description>
     </item>
     
   </channel>

@@ -32,7 +32,13 @@
   </url>
   
   <url>
-    <loc>https://brandstifter.github.io/tag/graph-theory/</loc>
+    <loc>https://brandstifter.github.io/category/graph-theory/</loc>
+    <lastmod>2018-12-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://brandstifter.github.io/tag/hamiltonian-cycle/</loc>
     <lastmod>2018-12-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
