@@ -101,16 +101,16 @@ Consider a Steiner Tree with optimal cost $OPT$ for $G’$.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;img/mst.pdf&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Double each edge&lt;/p&gt;
+&lt;p&gt;Ensure an Hamiltonian cycle in the graph by double each edge.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;imng/double-the-edges.pdf&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/double-the-edges.pdf&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Construct a hamiltonian cycle by short cutting steiner vertices previously visited.
 Get an hamiltonian path by removing one ??? the edges.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;img/mst-st.pdf&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;We have fo:weund an MST on the terminal vertices.&lt;/p&gt;
+&lt;p&gt;We have found an MST on the terminal vertices.&lt;/p&gt;
 
 &lt;p&gt;Each vertex has even degree.
 In general eulerian cycles exists $\Longleftrightarrow$ each vertex has even degree.
