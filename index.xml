@@ -34,10 +34,10 @@ This problems arise in railway networks, telecommunication networks and VSLI chi
 
 &lt;p&gt;The Steiner Tree Problem (STP) is a graph $G = (V, E)$.
 $V$ is splitted into two sets $R$ required terminal vertices and $S$ optional Steiner vertices.
-A subgraph of $G$ is a feasible solution if it spans all vertices of $T$.
+A subgraph of $G$ is a feasible solution if it spans all vertices of $R$.
 The objective is to minimize the cost.&lt;/p&gt;
 
-&lt;p&gt;The Metric Steiner Tree Problem (MSTP) is a specialization of the vanilla Steiner Tree $X = T \cup S$ along with a non-negative distance function $d : X \times X \mapsto \mathbb{R}_{\geq 0}$ for edges.
+&lt;p&gt;The Metric Steiner Tree Problem (MSTP) is a specialization of the vanilla Steiner Tree $X = R \cup S$ along with a non-negative distance function $d : X \times X \mapsto \mathbb{R}_{\geq 0}$ for edges.
 A metric have two properties:
 $$
 \begin{align}
@@ -48,7 +48,7 @@ $$&lt;/p&gt;
 
 &lt;p&gt;This gives an undirected graph $G = (V, E)$ with non-negative edge costs.&lt;/p&gt;
 
-&lt;p&gt;Problem: Find a minimal cost tree $T_m$, which contains all terminal vertives, and possibly some of the optional points, such that the cost
+&lt;p&gt;Problem: Find a minimal cost tree $T$, which contains all terminal vertives, and possibly some of the optional points, such that the cost
 $$
 \begin{align}
     C_d (T_m) := \sum_{(u,v) \in E} d(u, v) \nonumber
