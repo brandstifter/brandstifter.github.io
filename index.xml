@@ -68,7 +68,7 @@ The algorithm come up with this solution:
 &lt;img src=&#34;img/k4-mst-kruskal.pdf&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;But this is not optimal!
-The STP would generate a better MST for that example, since ST can also consider the option Steiner vertices in the calculation.
+The STP would generate a better MST for that example, since ST can also consider the option Steiner vertices for calculation.
 Next we look for a simple and easy to implement approximation for the STP.&lt;/p&gt;
 
 &lt;h2 id=&#34;towards-an-approximation&#34;&gt;Towards an approximation&lt;/h2&gt;
