@@ -1,0 +1,20 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{tikz-network}
+
+\begin{document}
+\begin{tikzpicture}
+	\Vertex[RGB,color={61,119,171},x=0,y=-7]{R1}
+	\Vertex[RGB,color={61,119,171},x=6,y=-7]{R2}
+
+	\Vertex[RGB,color={61,119,171},x=4,y=0]{R3}
+	\Vertex[RGB,color={61,119,171},x=0,y=0]{R4}
+	\Vertex[RGB,color={61,119,171},x=0,y=0]{R5}
+
+
+    \Vertex[RGB,color={243,176,20},x=-6,y=2]{S1}
+	\Vertex[RGB,color={243,176,20},x=0,y=2]{S2}
+
+    \Vertex[RGB,color={61,119,171},x=4,y=3]{R6}
+\end{tikzpicture}
+\end{document}

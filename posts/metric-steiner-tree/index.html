@@ -6,8 +6,7 @@
   <title>Metric Steiner Tree · </title>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="The Metric Steiner Tree Motivation A Steiner Tree is an optimization algorithm for finding a subtree spanning so called terminal vertices. Terminal vertices are the nodes in a network which must spanned by the MST. This problems arise in railway networks, telecommunication networks and VSLI chip design.
-This article describes an 2-approximation algorithm for the Metric Steiner Tree Problem.
-Introduction The Steiner Tree Problem (STP) is a graph $G = (V, E)$." />
+This article describes an 2-approximation algorithm for the Metric Steiner Tree Problem. Note that 2-approximation guarantees a solution $2 \cdot OPT$ on worst case situations." />
 
   <meta name="keywords" content="Thomas Brandstätter, Computer Science, Mathematics, Graph theory, Operations Research, Algorithms, Software Engineering" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -19,21 +18,19 @@ Introduction The Steiner Tree Problem (STP) is a graph $G = (V, E)$." />
 
 <meta property="og:title" content="Metric Steiner Tree" />
 <meta property="og:description" content="The Metric Steiner Tree Motivation A Steiner Tree is an optimization algorithm for finding a subtree spanning so called terminal vertices. Terminal vertices are the nodes in a network which must spanned by the MST. This problems arise in railway networks, telecommunication networks and VSLI chip design.
-This article describes an 2-approximation algorithm for the Metric Steiner Tree Problem.
-Introduction The Steiner Tree Problem (STP) is a graph $G = (V, E)$." />
+This article describes an 2-approximation algorithm for the Metric Steiner Tree Problem. Note that 2-approximation guarantees a solution $2 \cdot OPT$ on worst case situations." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://brandstifter.github.io/posts/metric-steiner-tree/" /><meta property="article:published_time" content="2018-12-08T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2018-12-08T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-12-23T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="Metric Steiner Tree">
 <meta itemprop="description" content="The Metric Steiner Tree Motivation A Steiner Tree is an optimization algorithm for finding a subtree spanning so called terminal vertices. Terminal vertices are the nodes in a network which must spanned by the MST. This problems arise in railway networks, telecommunication networks and VSLI chip design.
-This article describes an 2-approximation algorithm for the Metric Steiner Tree Problem.
-Introduction The Steiner Tree Problem (STP) is a graph $G = (V, E)$.">
+This article describes an 2-approximation algorithm for the Metric Steiner Tree Problem. Note that 2-approximation guarantees a solution $2 \cdot OPT$ on worst case situations.">
 
 
 <meta itemprop="datePublished" content="2018-12-08T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2018-12-08T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="534">
+<meta itemprop="dateModified" content="2018-12-23T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="692">
 
 
 
@@ -41,8 +38,7 @@ Introduction The Steiner Tree Problem (STP) is a graph $G = (V, E)$.">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Metric Steiner Tree"/>
 <meta name="twitter:description" content="The Metric Steiner Tree Motivation A Steiner Tree is an optimization algorithm for finding a subtree spanning so called terminal vertices. Terminal vertices are the nodes in a network which must spanned by the MST. This problems arise in railway networks, telecommunication networks and VSLI chip design.
-This article describes an 2-approximation algorithm for the Metric Steiner Tree Problem.
-Introduction The Steiner Tree Problem (STP) is a graph $G = (V, E)$."/>
+This article describes an 2-approximation algorithm for the Metric Steiner Tree Problem. Note that 2-approximation guarantees a solution $2 \cdot OPT$ on worst case situations."/>
 <script type="text/javascript" async
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
   MathJax.Hub.Config({
@@ -153,11 +149,13 @@ Introduction The Steiner Tree Problem (STP) is a graph $G = (V, E)$."/>
 Terminal vertices are the nodes in a network which must spanned by the MST.
 This problems arise in railway networks, telecommunication networks and VSLI chip design.</p>
 
-<p>This article describes an 2-approximation algorithm for the Metric Steiner Tree Problem.</p>
+<p>This article describes an 2-approximation algorithm for the Metric Steiner Tree Problem.
+Note that 2-approximation guarantees a solution $2 \cdot OPT$ on worst case situations.
+If you look for the best approximation, the best known algorithm is a $<sup>96</sup>&frasl;<sub>95</sub>$-approximation.</p>
 
 <h2 id="introduction">Introduction</h2>
 
-<p>The Steiner Tree Problem (STP) is a graph $G = (V, E)$.
+<p>The Steiner Tree Problem (STP) is a graph $G = (V,E)$.
 $V$ is splitted into two sets $R$ of required terminal vertices and $S$ of optional Steiner vertices.
 A subgraph of $G$ is a feasible solution if it spans all vertices of $R$.
 The objective is to minimize the cost.</p>
@@ -171,39 +169,50 @@ $$
 \end{align}
 $$</p>
 
-<p>This gives an undirected graph $G = (V, E)$ with non-negative edge costs.</p>
+<p>This gives an undirected graph $G = (V,E)$ with non-negative edge costs.</p>
 
-<p>Problem: Find a minimal cost tree $T$, which contains all terminal vertives, and possibly some of the optional points, such that the cost
+<p>Problem: Find a minimal cost tree $T$, which contains all terminal vertives, and possibly some of the optional points, such that the cost $C$ with metric $d$
 $$
 \begin{align}
-    C_d (T_m) := \sum_{(u,v) \in E} d(u, v) \nonumber
+    C_d (T) := \sum_{(u,v) \in E} d(u, v) \nonumber
 \end{align}
 $$
 of the tree is minimized.</p>
 
 <h3 id="non-optimal-spanning-trees">Non-optimal spanning trees</h3>
 
-<p>Possibility: Find a Minimal Spanning Tree (MST) on the terminal vertices,</p>
+<p>Let $G$ be a $K_4$ graph.
+<img src="img/k4-mst.pdf" alt="" /></p>
 
-<p><img src="img/k4-mst.pdf" alt="" /></p>
+<p>Find a Minimal Spanning Tree (MST) with Kruskal on the terminal vertices.
+The algorithm come up with this solution:
+<img src="img/k4-mst-kruskal.pdf" alt="" /></p>
 
-<p>but this is not optimal!
-Next we look for an approximation for the MSTP.</p>
+<p>But this is not optimal!
+The STP would generate a better MST for that example, since ST can also consider the option Steiner vertices in the calculation.
+Next we look for a simple and easy to implement approximation for the STP.</p>
 
 <h2 id="towards-an-approximation">Towards an approximation</h2>
 
 <p>In this section we show that the approximation bound for MSTP is not greater than for STP.</p>
 
-<p>Define $G’ = (V, E’$) from $G$ as follows: $G’$ is a complete graph and $e’_{ij}$ is the length of the shortets path in G for vertices $i$ to $j$.
-The paths in $G&rsquo;$ cannot be longer than $G$, therefore
+<p>Define $G’ = (V, E’$) from $G$ as follows: $G’$ is a complete graph and $e’_{ij}$ is the length of the shortets path in $G$ for vertices $i$ to $j$.</p>
+
+<p>The Steiner Tree algorithm would came up with this graph $G&rsquo;$
+<img src="img/k4-mst-Gprime.pdf" alt="" /></p>
+
+<p>The paths in $G&rsquo;$ cannot be longer than $G$, therefore
 $$
 \begin{align}
     OPT(G’) \leq OPT(G)
 \end{align}
 $$</p>
 
-<p>Assume we have a heuristic $H$ for $G’$.
-We get a solution for $G$ by replacing each edge of the MST in $G$ with its corresponding shortest path in $G$. Resolve cycles by removing appropriate edges. Hence
+<p>Note that the graph is still connected.</p>
+
+<p>Now we assume to have a heuristic $H$ for $G’$.
+We get a solution for $G$ by replacing each edge of the MST in $G$ with its corresponding shortest path in $G&rsquo;$.
+Resolve cycles by removing appropriate edges.
 $$
 \begin{align}
     C^H(G) \leq C^H(G’)
@@ -216,7 +225,8 @@ $$
 \end{align}
 $$</p>
 
-<p>Thus, each approximation algorithm for the STP with bound $\alpha$ gives an algorithm with bound $\alpha$ for the MSTP.</p>
+<p>Thus, each approximation algorithm for the general STP with bound $\alpha$ gives an algorithm with bound $\alpha$ for the specific MSTP.
+Why the bound is 2 is illustrated in the next section.</p>
 
 <h2 id="an-approximation-algorithm">An approximation algorithm</h2>
 
@@ -228,19 +238,23 @@ $$</p>
 
 <p>To ensure an even degree of all vertices, we double each edge.
 A graph with even degree have an eulerian cycle.
-The cost of an eulerian cycle equals $2 \cdot OPT$ by edge double.</p>
+The cost of the eulerian cycle equals $2 \cdot OPT$ by edge double.</p>
 
 <p><img src="img/double-the-edges.pdf" alt="" /></p>
 
-<p>Construct a hamiltonian cycle by short cutting steiner vertices previously visited.</p>
-
-<p><img src="img/mst-st.pdf" alt="" /></p>
+<p>Construct a hamiltonian cycle by short cutting steiner vertices previously visited.
+<img src="img/mst-st.pdf" alt="" />
+If the question was how to extend a railway network in a cheap manner for peripheral stations, this is an answer.</p>
 
 <p>To get a hamiltonian path remove one edge of the cycle.
-We have found an MST on the terminal vertices.</p>
-
-<p>A hamiltonian path does not increase the cost, because of the triangle inequality and removing edges.
+We have found an MST on the terminal vertices.
+A hamiltonian path does not increase the cost, because of the triangle inequality and removing edges.
 The resulting MST on the terminal vertices cost $\leq 2 \cdot OPT$ and the bound is tight.</p>
+
+<p>Looking back on $K_4$ we have to calculate the solution from $G&rsquo;$ back to the original $G$ instance.<br />
+<img src="img/k4-mst-2-approx.pdf" alt="" /></p>
+
+<p>By including the optional Steiner vertice we have found a better MST compared to the Kruskal algorithm.</p>
 
 <p>Special thanks to Prof. Hans Kellerer (University of Graz) for teaching.</p>
 
