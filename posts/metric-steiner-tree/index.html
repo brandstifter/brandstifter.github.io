@@ -30,7 +30,7 @@ This article describes an 2-approximation algorithm for the Metric Steiner Tree 
 
 <meta itemprop="datePublished" content="2018-12-08T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-12-23T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="693">
+<meta itemprop="wordCount" content="706">
 
 
 
@@ -251,7 +251,7 @@ We have found an MST on the terminal vertices.
 A hamiltonian path does not increase the cost, because of the triangle inequality and removing edges.
 The resulting MST on the terminal vertices cost $\leq 2 \cdot OPT$ and the bound is tight.</p>
 
-<p>Looking back on $K_4$ we have to calculate the solution from $G&rsquo;$ back to the original $G$ instance.<br />
+<p>Looking back on $K_4$ we have to calculate the solution from $G&rsquo;$ back to the original $G$ instance by reapplying the shortest path edges for $G&rsquo;$ to the edges in $G$.<br />
 <img src="img/k4-mst-2-approx.pdf" alt="" /></p>
 
 <p>By including the optional Steiner vertice we have found a better MST compared to the Kruskal algorithm.</p>
