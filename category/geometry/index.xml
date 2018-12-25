@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Geometry on </title>
+    <link>https://brandstifter.github.io/category/geometry/</link>
+    <description>Recent content in Geometry on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://brandstifter.github.io/category/geometry/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The beauty of Voronio</title>
+      <link>https://brandstifter.github.io/posts/the-beauty-of-voronoi/</link>
+      <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://brandstifter.github.io/posts/the-beauty-of-voronoi/</guid>
+      <description>The beauty of Voronoi Motivation Voronoi diagrams are found in nature on the skin of giraffes, veins of leaves und dragonfly wings. In biology, Voronois are used to model biological structures, in ecology, they are used to study growth patterns of forrests and in case of incoming emergency calls, Voronoi diagrams can alert the nearest fire station, also known as nearest neighbour queries. There are many applications in natural sciences, health, engineering, geometry and computer science.</description>
+    </item>
+    
+  </channel>
+</rss>
