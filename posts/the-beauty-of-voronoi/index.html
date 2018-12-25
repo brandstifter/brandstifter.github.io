@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta name="generator" content="Hugo 0.52" />
+  <meta charset="utf-8">
+  <title>The beauty of Voronio · </title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="The beauty of Voronoi Motivation Voronoi diagrams are found in nature on the skin of giraffes, veins of leaves und dragonfly wings. In biology, Voronois are used to model biological structures, in ecology, they are used to study growth patterns of forrests and in case of incoming emergency calls, Voronoi diagrams can alert the nearest fire station, also known as nearest neighbour queries. There are many applications in natural sciences, health, engineering, geometry and computer science." />
+
+  <meta name="keywords" content="Thomas Brandstätter, Computer Science, Mathematics, Graph theory, Operations Research, Algorithms, Software Engineering" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://brandstifter.github.io/css/brandstifter.css">
+
+
+
+
+<meta property="og:title" content="The beauty of Voronio" />
+<meta property="og:description" content="The beauty of Voronoi Motivation Voronoi diagrams are found in nature on the skin of giraffes, veins of leaves und dragonfly wings. In biology, Voronois are used to model biological structures, in ecology, they are used to study growth patterns of forrests and in case of incoming emergency calls, Voronoi diagrams can alert the nearest fire station, also known as nearest neighbour queries. There are many applications in natural sciences, health, engineering, geometry and computer science." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://brandstifter.github.io/posts/the-beauty-of-voronoi/" /><meta property="article:published_time" content="2018-12-20T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-12-20T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="The beauty of Voronio">
+<meta itemprop="description" content="The beauty of Voronoi Motivation Voronoi diagrams are found in nature on the skin of giraffes, veins of leaves und dragonfly wings. In biology, Voronois are used to model biological structures, in ecology, they are used to study growth patterns of forrests and in case of incoming emergency calls, Voronoi diagrams can alert the nearest fire station, also known as nearest neighbour queries. There are many applications in natural sciences, health, engineering, geometry and computer science.">
+
+
+<meta itemprop="datePublished" content="2018-12-20T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-12-20T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="844">
+
+
+
+<meta itemprop="keywords" content="voronoi,euler formula," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The beauty of Voronio"/>
+<meta name="twitter:description" content="The beauty of Voronoi Motivation Voronoi diagrams are found in nature on the skin of giraffes, veins of leaves und dragonfly wings. In biology, Voronois are used to model biological structures, in ecology, they are used to study growth patterns of forrests and in case of incoming emergency calls, Voronoi diagrams can alert the nearest fire station, also known as nearest neighbour queries. There are many applications in natural sciences, health, engineering, geometry and computer science."/>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+<body>
+  
+  <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://brandstifter.github.io/posts/the-beauty-of-voronoi/img/leave.jpg'); background-position: center; /*background-size: cover;*/ background-position: calc(50% - 27px) calc(50% - 70px);">
+  <div class="container">
+  <nav class="header-nav navbar navbar-expand-md navbar-dark light-dark">
+    <div class="header-logo navbar-brand">
+      
+        <a class="float-left" href="https://brandstifter.github.io/">
+      
+        
+        <img class="mr20 header-logo-image" src="https://brandstifter.github.io/images/phi.png" alt="logo">
+        
+        
+          Searching the truth
+         
+      </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="nav-menu collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            
+              
+                <a class="nav-link" href="https://brandstifter.github.io/categories">Topics</a>
+              
+            
+          </li>
+        
+        
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="container header-wrapper">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="header-content">
+        <h1 class="header-title">The beauty of Voronio</h1>
+        <p class="header-date">
+        Thu 20 December 2018
+          / In categories
+          <a href="https://brandstifter.github.io/category/graph-theory/">graph theory</a>
+        </p>
+        
+        <div class=""></div>
+        
+          <div class="clearfix"></div>
+          <p class="float-right header-tags">
+              <i class="fas fa-tags" aria-hidden="true"></i>
+              <a href="https://brandstifter.github.io/tag/euler-formula/">euler formula</a>, 
+                <a href="https://brandstifter.github.io/tag/voronoi/">voronoi</a>
+          </p>
+        
+        
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+<div class="container content">
+  
+
+<h1 id="the-beauty-of-voronoi">The beauty of Voronoi</h1>
+
+<h2 id="motivation">Motivation</h2>
+
+<p>Voronoi diagrams are found in nature on the skin of giraffes, veins of leaves und dragonfly wings.
+In biology, Voronois are used to model biological structures, in ecology, they are used to study growth patterns of forrests and in case of incoming emergency calls, Voronoi diagrams can alert the nearest fire station, also known as nearest neighbour queries.
+There are many applications in natural sciences, health, engineering, geometry and computer science.</p>
+
+<p>This article wants to illuminate two properties forming an Voronoi cell, namely how an edge and a vertex of a Voronoi are described.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>First, we need a terminology to speak about Voronoi diagrams.
+Image a plane and a point set $P$ with distinct points which are called sites.
+A Voronoi maps each point on the plane $p_{x,y}$ to its nearest site by subdividing the plane into $n$ cells, denoted by $\mathcal{V}(p_i)$.
+Since we talk about a structure in $\mathbb{R}^2$, we take the Euclidean distance between to points $p$ and $q$.
+$$
+\begin{align}
+    d(p, q) := \sqrt{ (p_x - q_x)^2 + (p_y - q_y)^2 }
+\end{align}
+$$</p>
+
+<p>In other words $q$ corresponds to the site $p_i$ if and only if $d(q, p_i) &lt; d(q, p_j)$ for each $p_j \in P$ with $i \neq j$.</p>
+
+<p>Next we define the bisector between two sides $p$ and $q$ as the perpendicular bisector of the line segment $\overline{pq}$.
+This bisector splits the the plane into two half-planes.
+The half-plane containing $p$ is denoted by $h(p,q)$ and the half-plane containing $q$ by $h(q,p)$.
+Combining several half-planes surrounding a site $p_i$ we have the observation that
+$$
+\begin{align}
+    \mathcal{V}(p_i) = \bigcup h(p_i, p_j), i \neq j
+\end{align}
+$$</p>
+
+<p>Following picture illustrates this
+<img src="img/site-half-planes.png" alt="" /></p>
+
+<p>When you do this with all sites in the plane you create a Voronoi diagram illustrated here
+<img src="img/voronoi-simple.png" alt="" /></p>
+
+<p>All these Voronoi cells forms a Voronoi diagram, denoted by $Vor(P)$.</p>
+
+<h2 id="voronoi-vertices">Voronoi vertices</h2>
+
+<p>The question this section tries to answer is, under which conditions a Voronoi diagram has a Voronie vertice where Voronoi edges meet other Voronoi edges. The answer is simnple.</p>
+
+<p>For the Voronoi diagram $Vor(P)$ of a set of points $P$ it holds, that a point $q$ is a vertrx of $Vor(P)$ if and only if its largest empty circle $C_P(q)$ contains three or more sites on its boundary.</p>
+
+<p>Speaking in pictures one would express it as follows
+<img src="img/voronoi-vertice.png" alt="" /></p>
+
+<p>Look at the picture above.
+The white vertex $q$ has three points on its boundary.
+Imagine an empty circle at every vertex, you will see that no less than three sites forms a vertex.</p>
+
+<p>Lets proof this.</p>
+
+<p>Suppose there is a point $q$ such that $C_P(q)$ contains three or more sites on its boundary.
+Let $p_i, p_j, p_k$ be three of those sites.
+Since the interior of $C_P(q)$ is empty $q$ must be on the boundary of each of $\mathcal{V}(p_i), \mathcal{V}(p_j), \mathcal{V}(p_k)$, and $q$ must be a vertex of $Vor(P)$.
+Every vertex $q$ of $Vor(P)$ is incident to at least three edges and, hence, to at least three cells $\mathcal{V}(p_i), \mathcal{V}(p_j), \mathcal{V}(p_k)$.
+Every vertex $q$ must be equidistant to $p_i, p_j, p_k$ and there cannot be another site closer to $q$, since otherwise $\mathcal{V}(p_i), \mathcal{V}(p_j), \mathcal{V}(p_k)$ would not meet at $q$.
+Hence, the interior of the circle with $p_i, p_j, p_k$ on its boundary does not contain any site.</p>
+
+<h2 id="voronoi-edges">Voronoi edges</h2>
+
+<p>Now suppose we move the white point $q$ along an edge in $Vor(P)$ and the circle $C_P(q)$ has two sites on its boundary and these sites are equidistant to $q$.
+We can do this as long as no other sites appear on the boundary of $C_P(q)$, since this would mean another vertex of $Vor(P)$.
+This forms an edge, as simple as that.</p>
+
+<p>Once again, speaking in pictures one would express it as follows
+<img src="img/voronoi-edge.png" alt="" /></p>
+
+<p>In a more formal way we state that the bisector between sites $p_i$ and $p_j$ defines an edge of $Vor(P)$ if and only if there is a point $q$ on the bisector such that $C_P(q)$ contains both $p_i$ and $p_j$ on its boundary but no other site.</p>
+
+<p>Lets proof this.</p>
+
+<p>Suppose there is a pont $q$ with the property.
+Since $C_P(q)$ does not contain ay sites in its interior and $p_i, p_j$ are on its boundary, we have $d(q, p_i) = d(q, p_j) \leq d(q, p_k)$ for all $1 \leq k \leq n$.
+It follows that $q$ lies on an edge or vertex of $Vor(P)$.
+$q$ cannot be a vertex of $Vor(P)$, hence $q$ lies on an edge of $Vor(P)$, which is defined by the bisector of $p_i, p_j$.
+Conversevly, let the bisector of $p_i, p_j$ define a Voronoi edge.
+The largest empty circle of any point $q$ in the interior of this edge must contain $p_i, p_j$ on its boundary and no other sites.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>Now we can move a circle in mind within an Voronoi diagram in order to recreate the vertices and edges by moving a it along the bisectors of a point set.
+This is beautiful and I amazed to recognize this pattern in nature.
+<img src="img/dragonfly-wing.jpg" alt="" /></p>
+
+<p>Special thanks to Martin Nöllenburg (University of Technology Vienna) for teaching this.</p>
+
+
+  
+  
+    
+  
+  
+
+
+</div>
+<div class="footer gradient-2">
+  <div class="container footer-container ">
+    <div class="row">
+      <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+        <div class="footer-title">Sitemap</div>
+        <ul class="list-unstyled">
+            
+              
+                <li><a href="https://brandstifter.github.io/tags/">Tags</a></li>
+              
+              
+                <li><a href="https://brandstifter.github.io/categories/">Categories</a></li>
+              
+            
+            
+            
+            <li><a rel="alternate" type="application/rss&#43;xml" href="https://brandstifter.github.io/index.xml"><i class="fas fa-rss-square"></i> RSS Feed</a></li>
+            
+            
+        </ul>
+      </div>
+      <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+        
+        <div class="footer-title">Social</div>
+        <ul class="list-unstyled">
+          
+          <li><a href="https://github.com/brandstifter" rel="noopener" target="_blank">GitHub</a></li>
+          
+        </ul>
+        
+      </div>
+      <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+        
+        <div class="footer-title">Links</div>
+        <ul class="list-unstyled">
+          
+          <li><a href="http://quintessenz.at" rel="noopener" target="_blank">quintessenz.at</a></li>
+          
+        </ul>
+        
+      </div>
+      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        <p class="pull-right text-right">
+          <small><em>Proudly powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo</a></em></small><br/>
+          <small>
+            &copy;
+            Thomas Brandstätter
+            2018
+          </small>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+</html>

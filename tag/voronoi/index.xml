@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on </title>
-    <link>https://brandstifter.github.io/posts/</link>
-    <description>Recent content in Posts on </description>
+    <title>Voronoi on </title>
+    <link>https://brandstifter.github.io/tag/voronoi/</link>
+    <description>Recent content in Voronoi on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://brandstifter.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://brandstifter.github.io/tag/voronoi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,16 +18,6 @@
       
       <guid>https://brandstifter.github.io/posts/the-beauty-of-voronoi/</guid>
       <description>The beauty of Voronoi Motivation Voronoi diagrams are found in nature on the skin of giraffes, veins of leaves und dragonfly wings. In biology, Voronois are used to model biological structures, in ecology, they are used to study growth patterns of forrests and in case of incoming emergency calls, Voronoi diagrams can alert the nearest fire station, also known as nearest neighbour queries. There are many applications in natural sciences, health, engineering, geometry and computer science.</description>
-    </item>
-    
-    <item>
-      <title>Metric Steiner Tree</title>
-      <link>https://brandstifter.github.io/posts/metric-steiner-tree/</link>
-      <pubDate>Sat, 08 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://brandstifter.github.io/posts/metric-steiner-tree/</guid>
-      <description>The Metric Steiner Tree Motivation A Steiner Tree is an optimization algorithm for finding a subtree spanning so called terminal vertices. Terminal vertices are the nodes in a network which must spanned by the MST. This problems arise in railway networks, telecommunication networks and VSLI chip design.
-This article describes an 2-approximation algorithm for the Metric Steiner Tree Problem. Note that 2-approximation guarantees a solution $2 \cdot OPT$ on worst case situations.</description>
     </item>
     
   </channel>

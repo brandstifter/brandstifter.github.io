@@ -6,10 +6,19 @@
     <description>Recent content in Graph Theory on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 08 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://brandstifter.github.io/category/graph-theory/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The beauty of Voronio</title>
+      <link>https://brandstifter.github.io/posts/the-beauty-of-voronoi/</link>
+      <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://brandstifter.github.io/posts/the-beauty-of-voronoi/</guid>
+      <description>The beauty of Voronoi Motivation Voronoi diagrams are found in nature on the skin of giraffes, veins of leaves und dragonfly wings. In biology, Voronois are used to model biological structures, in ecology, they are used to study growth patterns of forrests and in case of incoming emergency calls, Voronoi diagrams can alert the nearest fire station, also known as nearest neighbour queries. There are many applications in natural sciences, health, engineering, geometry and computer science.</description>
+    </item>
     
     <item>
       <title>Metric Steiner Tree</title>
