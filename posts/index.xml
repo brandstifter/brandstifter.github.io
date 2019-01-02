@@ -6,10 +6,19 @@
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://brandstifter.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The network flow problem</title>
+      <link>https://brandstifter.github.io/posts/the-network-flow-problem/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://brandstifter.github.io/posts/the-network-flow-problem/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>The beauty of Voronio</title>

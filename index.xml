@@ -6,10 +6,21 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 20 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Jan 2019 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://brandstifter.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The network flow problem</title>
+      <link>https://brandstifter.github.io/posts/the-network-flow-problem/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://brandstifter.github.io/posts/the-network-flow-problem/</guid>
+      
+        <description></description>
+      
+    </item>
     
     <item>
       <title>The beauty of Voronio</title>
@@ -97,8 +108,8 @@ This forms an edge, as simple as that.&lt;/p&gt;
 
 &lt;p&gt;Lets proof this.&lt;/p&gt;
 
-&lt;p&gt;Suppose there is a pont $q$ with the property.
-Since $C_P(q)$ does not contain ay sites in its interior and $p_i, p_j$ are on its boundary, we have $d(q, p_i) = d(q, p_j) \leq d(q, p_k)$ for all $1 \leq k \leq n$.
+&lt;p&gt;Suppose there is a point $q$ with the property.
+Since $C_P(q)$ does not contain any sites in its interior and $p_i, p_j$ are on its boundary, we have $d(q, p_i) = d(q, p_j) \leq d(q, p_k)$ for all $1 \leq k \leq n$.
 It follows that $q$ lies on an edge or vertex of $Vor(P)$.
 $q$ cannot be a vertex of $Vor(P)$, hence $q$ lies on an edge of $Vor(P)$, which is defined by the bisector of $p_i, p_j$.
 Conversevly, let the bisector of $p_i, p_j$ define a Voronoi edge.
@@ -106,11 +117,9 @@ The largest empty circle of any point $q$ in the interior of this edge must cont
 
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 
-&lt;p&gt;Now we can move a circle in mind within an Voronoi diagram in order to recreate the vertices and edges by moving a it along the bisectors of a point set.
+&lt;p&gt;Now we can move a circle in mind within an Voronoi diagram in order to recreate the vertices and edges by moving these circle along the bisectors of a point set.
 This is beautiful and I amazed to recognize this pattern in nature.
 &lt;img src=&#34;img/dragonfly-wing.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Special thanks to Martin Nöllenburg (University of Technology Vienna) for teaching this.&lt;/p&gt;
 </description>
       
     </item>
@@ -134,7 +143,7 @@ This problems arise in railway networks, telecommunication networks and VSLI chi
 
 &lt;p&gt;This article describes an 2-approximation algorithm for the Metric Steiner Tree Problem.
 Note that 2-approximation guarantees a solution $2 \cdot OPT$ on worst case situations.
-If you look for the best approximation, the best known algorithm is a $ &lt;sup&gt;96&lt;/sup&gt;&amp;frasl;&lt;sub&gt;95&lt;/sub&gt; $-approximation.&lt;/p&gt;
+If you look for the best approximation, the best known algorithm is a &lt;sup&gt;96&lt;/sup&gt;&amp;frasl;&lt;sub&gt;95&lt;/sub&gt;-approximation.&lt;/p&gt;
 
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 

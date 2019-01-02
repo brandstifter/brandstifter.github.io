@@ -27,7 +27,7 @@
 
 <meta itemprop="datePublished" content="2018-12-20T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-12-20T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="844">
+<meta itemprop="wordCount" content="832">
 
 
 
@@ -44,8 +44,10 @@
     processEscapes: true,
     processEnvironments: true,
     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    TeX: { 
+      equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] 
+    }
   }
   });
   MathJax.Hub.Queue(function() {
@@ -211,8 +213,8 @@ This forms an edge, as simple as that.</p>
 
 <p>Lets proof this.</p>
 
-<p>Suppose there is a pont $q$ with the property.
-Since $C_P(q)$ does not contain ay sites in its interior and $p_i, p_j$ are on its boundary, we have $d(q, p_i) = d(q, p_j) \leq d(q, p_k)$ for all $1 \leq k \leq n$.
+<p>Suppose there is a point $q$ with the property.
+Since $C_P(q)$ does not contain any sites in its interior and $p_i, p_j$ are on its boundary, we have $d(q, p_i) = d(q, p_j) \leq d(q, p_k)$ for all $1 \leq k \leq n$.
 It follows that $q$ lies on an edge or vertex of $Vor(P)$.
 $q$ cannot be a vertex of $Vor(P)$, hence $q$ lies on an edge of $Vor(P)$, which is defined by the bisector of $p_i, p_j$.
 Conversevly, let the bisector of $p_i, p_j$ define a Voronoi edge.
@@ -220,11 +222,9 @@ The largest empty circle of any point $q$ in the interior of this edge must cont
 
 <h2 id="summary">Summary</h2>
 
-<p>Now we can move a circle in mind within an Voronoi diagram in order to recreate the vertices and edges by moving a it along the bisectors of a point set.
+<p>Now we can move a circle in mind within an Voronoi diagram in order to recreate the vertices and edges by moving these circle along the bisectors of a point set.
 This is beautiful and I amazed to recognize this pattern in nature.
 <img src="img/dragonfly-wing.jpg" alt="" /></p>
-
-<p>Special thanks to Martin Nöllenburg (University of Technology Vienna) for teaching this.</p>
 
 
   
@@ -282,7 +282,9 @@ This is beautiful and I amazed to recognize this pattern in nature.
           <small>
             &copy;
             Thomas Brandstätter
-            2018
+            
+              2018 -
+            2019
           </small>
           
         </p>
